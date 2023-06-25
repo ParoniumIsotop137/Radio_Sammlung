@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Radioliste"
+        android:icon="@drawable/playlist"
+        android:id="@+id/main_menu_item"
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/radio_salzburg"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Salzburg"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_deutsch"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Deutschland"
+                app:showAsAction="always" />
+        </menu>
+    </item>
+
+</menu>

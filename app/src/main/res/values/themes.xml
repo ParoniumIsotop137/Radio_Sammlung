@@ -2,8 +2,11 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Radio_Sammlung" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        name="MenuStyle" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">#C32C13</item>
     </style>
 
-    <style name="Theme.Radio_Sammlung" parent="Base.Theme.Radio_Sammlung" />
+    <style name="Theme.Radio_Sammlung" parent="Base.Theme.Radio_Sammlung">
+
+    </style>
 </resources>
