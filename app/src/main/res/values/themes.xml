@@ -4,6 +4,9 @@
         <!-- Customize your light theme here. -->
         name="MenuStyle" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
         <item name="android:textColor">#C32C13</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:itemBackground">#BACFD8</item>
     </style>
 
     <style name="Theme.Radio_Sammlung" parent="Base.Theme.Radio_Sammlung">
