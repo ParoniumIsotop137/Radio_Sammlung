@@ -1,3 +1,11 @@
 Sender-ID;Name;Stream URL;HomePage
 1;Radio Salzburg;https://orf-live-sbg.mdn.ors.at/out/u/sbg/qxa/manifest.m3u8;https://salzburg.orf.at/radio/
 2;Rock Antenne Deutschland;https://stream.rockantenne.de/deutschrock/stream/mp3;https://www.rockantenne.de/
+3;Rock Antenne Live Rock;https://stream.rockantenne.de/live-rock/stream/mp3;https://www.rockantenne.de/
+4;Rock Antenne 70-er;https://stream.rockantenne.de/70er-rock/stream/mp3;https://www.rockantenne.de/
+5;Rock Antenne 80-er;https://stream.rockantenne.de/80er-rock/stream/mp3;https://www.rockantenne.de/
+6;Rock Antenne 90-er;https://stream.rockantenne.de/90er-rock/stream/mp3;https://www.rockantenne.de/
+7;Rock Antenne Modern Rock;https://stream.rockantenne.de/modern-rock/stream/mp3;https://www.rockantenne.de/
+8;Rock Antenne Munich City Nights;https://stream.rockantenne.de/munich-city-nights/stream/mp3;https://www.rockantenne.de/
+9;Rock Antenne Symphonic Rock;https://stream.rockantenne.de/symphonic-rock/stream/mp3;https://www.rockantenne.de/
+10;Radio Osttirol;https://login.streamplus.de/app.php/shoutcast/public/playlist/download/10956.m3u;https://www.radio-osttirol.at/

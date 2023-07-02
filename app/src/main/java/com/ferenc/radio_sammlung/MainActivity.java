@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ReadList();
 
         imBtnPlay = findViewById(R.id.imBtnPlay);
+        imBtnPlay.setEnabled(false);
         imBtnStop = findViewById(R.id.imBtnStop);
 
     }
@@ -82,17 +83,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int radioId = 0;
 
         if(item.getItemId() == R.id.radio_salzburg){
+
             radioId = 1;
             LoadRadioStream(radioId);
 
         } else if (item.getItemId() == R.id.rock_antenne_deutsch) {
+
             radioId = 2;
             LoadRadioStream(radioId);
 
+        }else if (item.getItemId() == R.id.rock_antenne_live_rock) {
+
+            radioId = 3;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_70) {
+
+            radioId = 4;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_80) {
+
+            radioId = 5;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_90) {
+
+            radioId = 6;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_modern_rock) {
+
+            radioId = 7;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_munich_city) {
+
+            radioId = 8;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_symphonic) {
+
+            radioId = 9;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.radio_osttirol) {
+
+            radioId = 10;
+            LoadRadioStream(radioId);
         }
+
 
         return super.onOptionsItemSelected(item);
     }
+
 
     private void LoadRadioStream(int radioId) {
 
@@ -101,7 +145,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 for (Radio radio : radios) {
                     if (radio.getRadioId() == radioId) {
                         player.setDataSource(radio.getStreamUrl());
-                        Toast.makeText(this, radio.getName()+" wird geladen!", Toast.LENGTH_LONG).show();
+                        imBtnPlay.setEnabled(true);
+                        Toast.makeText(this, radio.getName()+" ist startbereit!", Toast.LENGTH_LONG).show();
                     }
                 }
             } catch (IOException e) {
@@ -129,7 +174,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(player != null && player.isPlaying()){
             player.stop();
             player.reset();
+
         }
+
 
     }
 
@@ -139,6 +186,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 player.prepare();
                 player.start();
+                imBtnPlay.setEnabled(false);
+                imBtnStop.setEnabled(true);
             } catch (IOException e) {
                 Toast.makeText(this, "Die Sendung konnte nicht geladen werden! "+e.getMessage(), Toast.LENGTH_LONG).show();
             }

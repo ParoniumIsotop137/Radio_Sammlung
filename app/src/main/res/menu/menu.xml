@@ -18,6 +18,46 @@
                 android:icon="@drawable/play_radio"
                 android:title="Rock Antenne Deutschland"
                 app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_live_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Live Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_70"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne 70-er"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_80"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne 80-er"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_90"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne 90-er"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_modern_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Modern Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_munich_city"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Munich City Nights"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_symphonic"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Symphonic Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_osttirol"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Osttirol"
+                app:showAsAction="always" />
         </menu>
     </item>
 
