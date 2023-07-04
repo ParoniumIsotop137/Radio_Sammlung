@@ -54,9 +54,9 @@
                 android:title="Rock Antenne Symphonic Rock"
                 app:showAsAction="always" />
             <item
-                android:id="@+id/radio_osttirol"
+                android:id="@+id/antenne_vorarlberg_live"
                 android:icon="@drawable/play_radio"
-                android:title="Radio Osttirol"
+                android:title="Antenne Vorarlberg Live"
                 app:showAsAction="always" />
         </menu>
     </item>

@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             radioId = 9;
             LoadRadioStream(radioId);
 
-        }else if (item.getItemId() == R.id.radio_osttirol) {
+        }else if (item.getItemId() == R.id.antenne_vorarlberg_live) {
 
             radioId = 10;
             LoadRadioStream(radioId);
