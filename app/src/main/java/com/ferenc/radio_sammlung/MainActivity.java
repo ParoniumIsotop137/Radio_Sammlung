@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ReadList();
 
         imBtnPlay = findViewById(R.id.imBtnPlay);
+        imBtnPlay.setEnabled(false);
         imBtnStop = findViewById(R.id.imBtnStop);
 
     }
@@ -82,17 +83,135 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int radioId = 0;
 
         if(item.getItemId() == R.id.radio_salzburg){
+
             radioId = 1;
             LoadRadioStream(radioId);
 
         } else if (item.getItemId() == R.id.rock_antenne_deutsch) {
+
             radioId = 2;
             LoadRadioStream(radioId);
 
+        }else if (item.getItemId() == R.id.rock_antenne_live_rock) {
+
+            radioId = 3;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_70) {
+
+            radioId = 4;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_80) {
+
+            radioId = 5;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_90) {
+
+            radioId = 6;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_modern_rock) {
+
+            radioId = 7;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_munich_city) {
+
+            radioId = 8;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.rock_antenne_symphonic) {
+
+            radioId = 9;
+            LoadRadioStream(radioId);
+
+        }else if (item.getItemId() == R.id.antenne_vorarlberg_live) {
+
+            radioId = 10;
+            LoadRadioStream(radioId);
         }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_plus80_90) {
+
+            radioId = 11;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_classic_rock) {
+
+            radioId = 12;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_schlager) {
+
+            radioId = 13;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_rock) {
+
+            radioId = 14;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.u_1_tirol) {
+
+            radioId = 15;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_kaernten) {
+
+            radioId = 16;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_noe) {
+
+            radioId = 17;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_ooe) {
+
+            radioId = 18;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_stm) {
+
+            radioId = 19;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_wien) {
+
+            radioId = 20;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_on_air) {
+
+            radioId = 21;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_hard_rock) {
+
+            radioId = 22;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_classic_rock) {
+
+            radioId = 23;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_new_rock) {
+
+            radioId = 24;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_rotweiss_rock) {
+
+            radioId = 25;
+            LoadRadioStream(radioId);
+        }
+
 
         return super.onOptionsItemSelected(item);
     }
+
 
     private void LoadRadioStream(int radioId) {
 
@@ -101,7 +220,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 for (Radio radio : radios) {
                     if (radio.getRadioId() == radioId) {
                         player.setDataSource(radio.getStreamUrl());
-                        Toast.makeText(this, radio.getName()+" wird geladen!", Toast.LENGTH_LONG).show();
+                        imBtnPlay.setEnabled(true);
+                        Toast.makeText(this, radio.getName()+" ist startbereit!", Toast.LENGTH_LONG).show();
                     }
                 }
             } catch (IOException e) {
@@ -129,7 +249,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(player != null && player.isPlaying()){
             player.stop();
             player.reset();
+
         }
+
 
     }
 
@@ -139,6 +261,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 player.prepare();
                 player.start();
+                imBtnPlay.setEnabled(false);
+                imBtnStop.setEnabled(true);
             } catch (IOException e) {
                 Toast.makeText(this, "Die Sendung konnte nicht geladen werden! "+e.getMessage(), Toast.LENGTH_LONG).show();
             }

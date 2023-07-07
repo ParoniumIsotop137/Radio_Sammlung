@@ -18,6 +18,122 @@
                 android:icon="@drawable/play_radio"
                 android:title="Rock Antenne Deutschland"
                 app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_live_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Live Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_70"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne 70-er"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_80"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne 80-er"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_90"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne 90-er"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_modern_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Modern Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_munich_city"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Munich City Nights"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/rock_antenne_symphonic"
+                android:icon="@drawable/play_radio"
+                android:title="Rock Antenne Symphonic Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/antenne_vorarlberg_live"
+                android:icon="@drawable/play_radio"
+                android:title="Antenne Vorarlberg Live"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/antenne_vorarlberg_plus80_90"
+                android:icon="@drawable/play_radio"
+                android:title="Antenne Vorarlberg PLUS 80er, 90er Hits"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/antenne_vorarlberg_classic_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Antenne Vorarlberg Classic Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/antenne_vorarlberg_schlager"
+                android:icon="@drawable/play_radio"
+                android:title="Antenne Vorarlberg Schlagerkult"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/antenne_vorarlberg_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Antenne Vorarlberg Rock Radio"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/u_1_tirol"
+                android:icon="@drawable/play_radio"
+                android:title="U-1 Tirol"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_kaernten"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Kärnten"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_noe"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Niederösterreich"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_ooe"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Oberösterreich"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_stm"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Steiermark"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_wien"
+                android:icon="@drawable/play_radio"
+                android:title="Radio Wien"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_886_on_air"
+                android:icon="@drawable/play_radio"
+                android:title="Radio 88.6 On Air"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_886_hard_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Radio 88.6 Hard Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_886_classic_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Radio 88.6 Classic Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_886_new_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Radio 88.6 New Rock"
+                app:showAsAction="always" />
+            <item
+                android:id="@+id/radio_886_rotweiss_rock"
+                android:icon="@drawable/play_radio"
+                android:title="Radio 88.6 Rot-Weiss Rock"
+                app:showAsAction="always" />
+
         </menu>
     </item>
 
