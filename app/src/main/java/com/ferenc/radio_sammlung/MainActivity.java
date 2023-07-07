@@ -132,6 +132,81 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             radioId = 10;
             LoadRadioStream(radioId);
         }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_plus80_90) {
+
+            radioId = 11;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_classic_rock) {
+
+            radioId = 12;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_schlager) {
+
+            radioId = 13;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.antenne_vorarlberg_rock) {
+
+            radioId = 14;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.u_1_tirol) {
+
+            radioId = 15;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_kaernten) {
+
+            radioId = 16;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_noe) {
+
+            radioId = 17;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_ooe) {
+
+            radioId = 18;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_stm) {
+
+            radioId = 19;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_wien) {
+
+            radioId = 20;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_on_air) {
+
+            radioId = 21;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_hard_rock) {
+
+            radioId = 22;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_classic_rock) {
+
+            radioId = 23;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_new_rock) {
+
+            radioId = 24;
+            LoadRadioStream(radioId);
+        }
+        else if (item.getItemId() == R.id.radio_886_rotweiss_rock) {
+
+            radioId = 25;
+            LoadRadioStream(radioId);
+        }
 
 
         return super.onOptionsItemSelected(item);
