@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.ferenc.radio_sammlung.data.AssetReader;
 import com.ferenc.radio_sammlung.radio.Radio;
+import com.ferenc.radio_sammlung.web.RadioHomePage;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -60,14 +62,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imBtnStop = findViewById(R.id.imBtnStop);
 
         btnHomePage = findViewById(R.id.btnHomePage);
-        btnHomePage.setVisibility(View.INVISIBLE);
-        btnHomePage.setEnabled(false);
 
         txtRadioName = findViewById(R.id.txtRadioName);
         txtRunning = findViewById(R.id.txtRunning);
 
         txtRadioName.setVisibility(View.INVISIBLE);
         txtRunning.setVisibility(View.INVISIBLE);
+
+        webPage = "";
 
     }
 
@@ -234,7 +236,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void LoadRadioStream(int radioId) {
 
         txtRunning.setVisibility(View.VISIBLE);
-        btnHomePage.setEnabled(true);
 
         if(radioId != 0){
             StopRadio();
@@ -265,12 +266,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.imBtnStop) {
             StopRadio();
         } else if (view.getId() == R.id.btnHomePage) {
-            StartHomePageView();
+            StartHomePageView(webPage);
         }
 
     }
 
-    private void StartHomePageView() {
+    private void StartHomePageView(String webPage) {
+
+        if(webPage != null && !webPage.isEmpty()){
+            Intent intent = new Intent(this, RadioHomePage.class);
+            intent.putExtra("link", webPage);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(this, "Es ist noch kein Radio gestartet worden!", Toast.LENGTH_LONG).show();
+        }
+
+
+
     }
 
     private void StopRadio() {
@@ -279,8 +292,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             player.stop();
             player.reset();
             txtRadioName.setVisibility(View.INVISIBLE);
-            btnHomePage.setVisibility(View.INVISIBLE);
-            btnHomePage.setEnabled(false);
 
         }
 
