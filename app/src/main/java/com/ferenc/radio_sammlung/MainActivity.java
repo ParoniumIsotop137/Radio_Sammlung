@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -14,10 +16,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ferenc.radio_sammlung.data.AssetReader;
 import com.ferenc.radio_sammlung.radio.Radio;
+import com.ferenc.radio_sammlung.web.RadioHomePage;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,6 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ImageButton imBtnPlay,imBtnStop;
 
+    private Button btnHomePage;
+
+    private TextView txtRadioName, txtRunning;
+
+    private String webPage;
     private static MediaPlayer player = new MediaPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         menuBar=findViewById(R.id.main_menu);
+        menuBar.setTitleTextColor(Color.parseColor("#009688"));
         setSupportActionBar(menuBar);
 
         radios = new ArrayList<Radio>();
@@ -50,6 +60,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imBtnPlay = findViewById(R.id.imBtnPlay);
         imBtnPlay.setEnabled(false);
         imBtnStop = findViewById(R.id.imBtnStop);
+
+        btnHomePage = findViewById(R.id.btnHomePage);
+
+        txtRadioName = findViewById(R.id.txtRadioName);
+        txtRunning = findViewById(R.id.txtRunning);
+
+        txtRadioName.setVisibility(View.INVISIBLE);
+        txtRunning.setVisibility(View.INVISIBLE);
+
+        webPage = "";
 
     }
 
@@ -215,11 +235,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void LoadRadioStream(int radioId) {
 
+        txtRunning.setVisibility(View.VISIBLE);
+
         if(radioId != 0){
+            StopRadio();
             try {
                 for (Radio radio : radios) {
                     if (radio.getRadioId() == radioId) {
                         player.setDataSource(radio.getStreamUrl());
+                        txtRadioName.setText(radio.getName());
+                        webPage = radio.getHomePageUrl();
                         imBtnPlay.setEnabled(true);
                         Toast.makeText(this, radio.getName()+" ist startbereit!", Toast.LENGTH_LONG).show();
                     }
@@ -240,7 +265,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             PlayRadio();
         } else if (view.getId() == R.id.imBtnStop) {
             StopRadio();
+        } else if (view.getId() == R.id.btnHomePage) {
+            StartHomePageView(webPage);
         }
+
+    }
+
+    private void StartHomePageView(String webPage) {
+
+        if(webPage != null && !webPage.isEmpty()){
+            Intent intent = new Intent(this, RadioHomePage.class);
+            intent.putExtra("link", webPage);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(this, "Es ist noch kein Radio gestartet worden!", Toast.LENGTH_LONG).show();
+        }
+
+
 
     }
 
@@ -249,6 +291,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(player != null && player.isPlaying()){
             player.stop();
             player.reset();
+            txtRadioName.setVisibility(View.INVISIBLE);
 
         }
 
@@ -261,6 +304,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try {
                 player.prepare();
                 player.start();
+                txtRadioName.setVisibility(View.VISIBLE);
+                btnHomePage.setVisibility(View.VISIBLE);
                 imBtnPlay.setEnabled(false);
                 imBtnStop.setEnabled(true);
             } catch (IOException e) {

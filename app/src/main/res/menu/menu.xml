@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="Radioliste"
-        android:icon="@drawable/playlist"
         android:id="@+id/main_menu_item"
+        android:icon="@drawable/menu_64dp"
+        android:title="Radioliste"
         app:showAsAction="always">
         <menu>
 
